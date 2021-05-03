@@ -8,6 +8,10 @@ import java.util.Arrays;
 import java.util.Calendar;
 
 public class Main {
+    //
+    //Бд должна содержать 6 колонок в следующей последовательности и со следующими типами:
+    // "ID Студента"(int), "Имя"(String), "Фамилия"(String), Отчество"(String), "Дата рождения"(Date), "Группа"(String).
+    //
     static String URL = "jdbc:mysql://localhost:3306/StudentDataBase";
     static String USERNAME = "root";
     static String PASSWORD = "root";
@@ -26,9 +30,7 @@ public class Main {
                 DataBaseGUI window = new DataBaseGUI();
             }
         });
-
     }
-
     public static void addQuery() {
         String sqlAddCommand = "INSERT INTO Студент (idСтудента, Имя, Фамилия, Отчество, `Дата рождения`, Группа) " +
                 "VALUES (?, ?, ?, ?, ?, ?);";

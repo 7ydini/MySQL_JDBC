@@ -7,6 +7,10 @@ import java.util.List;
 
 
 public class DataBaseGUI extends JFrame {
+    //
+    //Бд должна содержать 6 колонок в следующей последовательности и со следующими типами:
+    // "ID Студента"(int), "Имя"(String), "Фамилия"(String), Отчество"(String), "Дата рождения"(Date), "Группа"(String).
+    //
     private static final String[] label = {"ID Студента", "Имя", "Фамилия", "Отчество", "Дата рождения", "Группа"};//Названия наших столбцов
     private static final int column = 6;
     private static final JFrame frame = new JFrame("Студент");
@@ -105,7 +109,7 @@ public class DataBaseGUI extends JFrame {
         frame.repaint();
     }
 
-    private class AddQuery implements ActionListener {
+    private class AddQuery implements ActionListener {//Обработка кнопки "Добавить"
         @Override
         public void actionPerformed(ActionEvent e) {
             boolean corrected = true;
@@ -120,7 +124,7 @@ public class DataBaseGUI extends JFrame {
         }
     }
 
-    private class DeleteQuery implements ActionListener {
+    private class DeleteQuery implements ActionListener {//Обработка кнопки "Удалить"
         @Override
         public void actionPerformed(ActionEvent e) {
             if (deleteTextField.getText().strip().isEmpty()){
@@ -131,7 +135,7 @@ public class DataBaseGUI extends JFrame {
         }
     }
 
-    private class UpdateQuery implements ActionListener {
+    private class UpdateQuery implements ActionListener {//Обработка кнопки "Обновить"
         @Override
         public void actionPerformed(ActionEvent e) {
             Main.refreshQuery();
@@ -148,7 +152,6 @@ public class DataBaseGUI extends JFrame {
         createPaneTable(table);
     }
     private static void deleteScrollPane() {
-
         if(pane != null){
             frame.getContentPane().remove(pane);
             pane = null;
